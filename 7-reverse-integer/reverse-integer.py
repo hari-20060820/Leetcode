@@ -4,19 +4,20 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
+        ma=(2**31)-1
+        mi=-(2**31)
         s=str(x)
-        if(x>=0 ):
-            s=s[::-1]
-            if(int(s)<=(2**31)-1):
-                return int(s)
-            else:
-                return 0
-        elif(x<=0 and x>=-(2**31)):
-            s=s[0]+s[1:][::-1]
-            if(int(s)>=-(2**31)):
-                return int(s)
-            else:
-                return 0
-            return int(s)
-        
+        sum=0
+        sign =1
+        while x!=0:
+            if x<0:
+                sign =-1
+                x=x*-1
+            sum=sum*10+x%10
+            x=x//10
+        if(sum>=mi and sum<=ma):
+            sum=sum*sign
+            return sum
+        else: 
+            return 0
         

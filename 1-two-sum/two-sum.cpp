@@ -8,13 +8,12 @@ public:
         for(int i=0;i<n;i++)
         {
             int sum =target-nums[i];
-            if(hashset.find(sum)!=hashset.end())
+            if(hashset.count(sum))
             {
-                ar.push_back(hashset[sum]);
-                ar.push_back(i);
+                return {hashset[sum],i};
             }
             hashset[nums[i]]=i;
         }
-        return ar;
+        return {};
     }
 };

@@ -1,27 +1,23 @@
 class Solution {
 public:
-    string res;
-    bool isPalindrome(string s) {
-        for( char c :s)
-        {
-            if(isalnum(c))
-            {
-                res+=tolower(c);
-            }
-        }
-        cout<<res;
     
-        int n=res.size();
+    bool isPalindrome(string s) {
+        
+    
+        int n=s.size();
         int i=0,j=n-1;
         while(i<j)
         {
-            if(res[i]!=res[j])
+            if(!isalnum(s[i])) i++;
+            else if(!isalnum(s[j])) j--;
+            else if(tolower(s[i])!=tolower(s[j]))
             {
                 return false;
             }   
+            else{
             i++;
             j--;
-        }
+        }}
         return true;
     }
 };

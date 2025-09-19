@@ -23,7 +23,6 @@ bool fn(string s,int i,int j)
             {
                 return fn(s,i+1,j)||fn(s,i,j-1);
             }
-            
                 i++;
                 j--;
         }return true;

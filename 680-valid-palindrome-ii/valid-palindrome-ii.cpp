@@ -3,7 +3,7 @@ public:
 
 bool fn(string s,int i,int j)
 {
-  while(i<=j)
+  while(i<j)
         {
           if(s[i]!=s[j])
             {
@@ -17,14 +17,16 @@ bool fn(string s,int i,int j)
         int i=0;
         int j=s.size()-1;
        
-        while(i<=j)
+        while(i<j)
         {
           if(s[i]!=s[j])
             {
                 return fn(s,i+1,j)||fn(s,i,j-1);
             }
+            
                 i++;
                 j--;
+
         }return true;
     }
 };

@@ -5,13 +5,11 @@ public:
         int minp=INT_MAX;
         for(int pr : prices)
         {
-            if(pr<minp){
-            minp=pr;}
+            
+            minp=min(pr,minp);
 
-            if(pr-minp>m)
-            {
-                m=pr-minp;
-            }
+            m=max(pr-minp,m);
+            
         }
         return m;
     }

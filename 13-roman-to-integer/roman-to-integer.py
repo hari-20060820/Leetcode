@@ -13,8 +13,8 @@ class Solution(object):
         'D': 500,
         'M': 1000
     }
+        
         total=0
-        c=0
         p=0
         for i in s[::-1]:
             c=roman[i]

@@ -10,20 +10,17 @@ class Solution {
         for(int i=0;i<n;i++)
         {
             Character ch =pattern.charAt(i);
-            boolean b=hm.containsKey(ch);
+            String b=words[i];
+            if(hm.containsKey(ch))
+            {   
+                if(!hm.get(ch).equals(b)) return false;
+            }
+            else{
+                if(hm.containsValue(b)) return false;
+                hm.put(ch,b);
+            }
+
             
-
-            if(hm.containsValue(words[i]) && !b)
-            {
-                return false;
-            }
-
-            if(b && !hm.get(ch).equals(words[i]))
-            {
-                return false;
-            }
-            else
-            hm.put(ch,words[i]);
         }
         return true;
     }

@@ -12,6 +12,7 @@ public:
             if(b.find(x)!=b.end())
             {
                 res.push_back(x);
+                b.erase(x);
             }
             
         }

@@ -15,7 +15,7 @@ public:
         if(l>r){
             return nullptr;
         }
-        int mid=(l+r)/2;
+        int mid=l+(r-l)/2;
         TreeNode* root =new TreeNode(nums[mid]);
         root->left = insert(l,mid-1,nums);
         root->right =insert(mid+1,r,nums);

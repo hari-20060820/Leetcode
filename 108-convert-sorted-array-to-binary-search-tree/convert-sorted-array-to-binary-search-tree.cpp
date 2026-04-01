@@ -22,7 +22,7 @@ public:
         return root;
     }
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        TreeNode* head=insert(0,nums.size()-1,nums);
-        return head;
+        return insert(0,nums.size()-1,nums);
+        
     }
 };

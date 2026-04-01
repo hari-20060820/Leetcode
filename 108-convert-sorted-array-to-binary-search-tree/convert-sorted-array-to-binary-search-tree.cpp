@@ -11,7 +11,11 @@
  */
 class Solution {
 public:
-    TreeNode* insert(int l, int r,vector<int> nums){
+    
+    TreeNode* sortedArrayToBST(vector<int>& nums) {
+        return insert(0,nums.size()-1,nums);
+        
+    }TreeNode* insert(int l, int r,vector<int> nums){
         if(l>r){
             return nullptr;
         }
@@ -20,9 +24,5 @@ public:
         root->left = insert(l,mid-1,nums);
         root->right =insert(mid+1,r,nums);
         return root;
-    }
-    TreeNode* sortedArrayToBST(vector<int>& nums) {
-        return insert(0,nums.size()-1,nums);
-        
     }
 };

@@ -15,7 +15,7 @@ public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
         return insert(0,nums.size()-1,nums);
         
-    }TreeNode* insert(int l, int r,vector<int> nums){
+    }TreeNode* insert(int l, int r,vector<int>& nums){
         if(l>r){
             return nullptr;
         }

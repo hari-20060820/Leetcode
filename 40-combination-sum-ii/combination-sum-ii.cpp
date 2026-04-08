@@ -10,9 +10,13 @@ public:
         if(sum>target){
             return;
         }
+        
         for (int i=index;i<can.size();i++)
         {
             if (i > index && can[i] == can[i - 1]) continue;
+             if(sum+can[i]>target){
+            break;
+        }
             temp.push_back(can[i]);
             backtrack(i+1,can,target,sum+can[i],temp);
             temp.pop_back();

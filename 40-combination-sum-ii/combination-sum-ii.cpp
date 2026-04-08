@@ -7,10 +7,7 @@ public:
             res.push_back(temp);
             return;
         }
-        if(sum>target){
-            return;
-        }
-        
+    
         for (int i=index;i<can.size();i++)
         {
             if (i > index && can[i] == can[i - 1]) continue;

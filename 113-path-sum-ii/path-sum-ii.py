@@ -12,6 +12,7 @@ class Solution:
                 return 
             total += node.val
             path.append(node.val)
+            #leaf node
             if not node.left and not node.right :
                 if targetSum == total:
                     ans.append(path[:])

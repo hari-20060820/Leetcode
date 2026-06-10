@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     def insertionSortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if not head:
+        ''' if not head:
             return head
         p=head
         p1=head.next
@@ -18,4 +18,16 @@ class Solution:
                     p2=p2.next
             p=p.next
             p1=p1.next
-        return head
+        return head'''
+        res = []
+        while head:
+            res.append(head.val)
+            head = head.next
+        
+        res.sort()
+        dummy = ListNode()
+        curr = dummy
+        for num in res:
+            curr.next = ListNode(num)
+            curr = curr.next
+        return dummy.next

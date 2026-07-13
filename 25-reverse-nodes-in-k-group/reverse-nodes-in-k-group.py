@@ -26,3 +26,10 @@ class Solution(object):
             node[-1].next=None
             return node[0]
         return None
+        """nstead of reversing pointers immediately,
+
+Store every node in an array.
+Reverse every k elements in the array.
+Reconnect the nodes.
+
+This is much easier to visualize"""

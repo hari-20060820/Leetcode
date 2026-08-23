@@ -4,12 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        hashset=set()
-        for i in nums:
-            
-            if i in hashset:
+        freq={}
+        for i in range(len(nums)):
+            freq[nums[i]]=freq.get(nums[i],0)+1
+            if freq.get(nums[i]) >1:
                 return True
-            else:
-                hashset.add(i)
         return False
-        

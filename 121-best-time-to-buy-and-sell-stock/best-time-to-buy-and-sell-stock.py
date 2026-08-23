@@ -4,10 +4,9 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        buy=prices[0]
-        prfit=0
-        for price in prices :
-            buy=min(buy,price)
-            prfit=max(prfit,price-buy)
-        return prfit
-        
+        p=0
+        b=float("inf")
+        for i in range(len(prices)):
+            b=min(b,prices[i])
+            p=max(p,prices[i]-b)
+        return p

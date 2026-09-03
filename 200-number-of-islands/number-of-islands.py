@@ -1,36 +1,22 @@
-class Solution(object):
-    def numIslands(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: int
-        """
-        queue=deque()
-        row=len(grid)
-        col=len(grid[0])
-        directions=[(1,0),(0,1),(-1,0),(0,-1)]
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        m=len(grid)
+        n=len(grid[0])
         count=0
-        visited=set()
-        for i in range(row):
-            for j in range(col):
-                if grid[i][j]=="1" and (i,j) not in visited:
-                    queue.append((i,j))
-                    visited.add((i,j))
+        d=[(1,0),(0,1),(-1,0),(0,-1)]
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == '1':
                     count+=1
-
-                while queue:
-                    r,c=queue.popleft()
-                    for dr,dc in directions:
-                        nr=r+dr
-                        nc=c+dc
-                        if (0<=nr<row) and (0<=nc<col) and grid[nr][nc]=="1" and (nr,nc) not in visited:
-                            visited.add((nr,nc))
-                            queue.append((nr,nc))
-        
-        return count 
-        """Traverse every cell.
-If you find an unvisited land ('1'):
-Increment island count.
-Start BFS from this cell.
-Mark every connected land as visited.
-Continue scanning.
-Return the count."""
+                    q=deque()
+                    q.append((i,j))
+                    grid[i][j]='0'
+                    while q:
+                        nr,nc=q.popleft()
+                        for r,c in d:
+                            dr=nr+r
+                            dc=nc+c
+                            if 0<=dr<m and 0<=dc<n and grid[dr][dc]=='1':
+                                grid[dr][dc]='0'
+                                q.append((dr,dc))
+        return count
